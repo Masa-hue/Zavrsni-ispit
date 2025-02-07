@@ -1,0 +1,23 @@
+{
+  "dependencies": {
+    "chai": "^5.1.2",
+    "selenium-webdriver": "^4.28.1",
+    "mocha":"11.1.0"
+  },
+  "name": "selenium",
+  "version": "1.0.0",
+  "main": "zavrsnitest.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "mocha --timeout 10000"
+  },
+  "keywords": [],
+  "author": "masa",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "mocha": "^11.1.0"
+  }
+}
