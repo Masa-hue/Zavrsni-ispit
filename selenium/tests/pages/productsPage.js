@@ -1,4 +1,4 @@
-import { By } from 'selenium-webdriver';
+const { By } = require('selenium-webdriver');
 
 class ProductsPage {
     constructor(driver) {
@@ -62,4 +62,4 @@ class ProductsPage {
     } 
 }
 
-export {ProductsPage};
+module.exports = ProductsPage;

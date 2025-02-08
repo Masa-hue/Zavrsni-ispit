@@ -5,13 +5,12 @@
   },
   "name": "selenium",
   "version": "1.0.0",
-  "type": "module",
-  "main": "zavrsnitest.js",
+  "main": "",
   "directories": {
     "test": "tests"
   },
   "scripts": {
-    "test": "mocha tests/**/*.js"
+    "test": "mocha tests/**/*js"
   },
   "keywords": [],
   "author": "masa",

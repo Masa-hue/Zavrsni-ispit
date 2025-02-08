@@ -1,18 +1,18 @@
-import { expect } from 'chai';
-import { Builder, Browser, By, until} from 'selenium-webdriver';
+const { expect } = require('chai');
+const { Builder, By } = require('selenium-webdriver');
 //const Driver = require('../drivers/driver');
-import LoginPage from '../pages/loginPage';
-import ProductsPage from '../pages/productsPage';
+const LoginPage = require('../pages/loginPage');
+const ProductsPage = require('../pages/productsPage');
 
 describe('Login Tests', function () {
     //let driver;
     let loginPage;
     let productsPage;
     //let cartPage;
-    this.timeout(50000);
+    this.timeout(60000);
 
     beforeEach(async function () {
-        driver = await new Builder().forBrowser(Browser.CHROME).build();
+        driver = new Builder().forBrowser('chrome').build();
         //driver = new Driver().getDriver();
         loginPage = new LoginPage(driver);
         productsPage = new ProductsPage(driver);
@@ -43,14 +43,16 @@ describe('Login Tests', function () {
 
     it('Kupovina proizvoda', async function () {
         await loginPage.login('standard_user', 'secret_sauce');
+
         const pageTitle = await driver.getTitle();
         expect(pageTitle).to.include('Swag Labs');
+
         await productsPage.addToCart(0);
         await productsPage.addToCart(1);
         const cartBadge = await productsPage.getCartBadgeText();
         expect(cartBadge).to.equal('2');
-
-
+        
+     
         await productsPage.goToCart();
         await productsPage.checkout();
 
@@ -64,18 +66,17 @@ describe('Login Tests', function () {
         const finishMessage = await driver.findElement(By.className('complete-header')).getText();
         expect(finishMessage).to.equal('Thank you for your order!');
 
-       // await productsPage.finishburgerButton();
-        //await productsPage.finishlogoutButton();
        //await productsPage.finishBurger();
        //await productsPage.finishLogout();
+
         //await driver.findElement(By.id('react-burger-menu-btn')).click();
         //await driver.findElement(By.id('logout_sidebar_link')).click();
     
         // 15. Verify we are back on the login page
         //const loginPageTitle = await driver.getTitle();
        // expect(loginPageTitle).to.include('Swag Labs');
-
-
+    
+        
     });
 
 });
