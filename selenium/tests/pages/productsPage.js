@@ -62,4 +62,4 @@ class ProductsPage {
     } 
 }
 
-module.exports=ProductsPage;
+export {ProductsPage};

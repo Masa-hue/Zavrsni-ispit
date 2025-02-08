@@ -1,17 +1,17 @@
 {
   "dependencies": {
     "chai": "^5.1.2",
-    "selenium-webdriver": "^4.28.1",
-    "mocha":"11.1.0"
+    "selenium-webdriver": "^4.28.1"
   },
   "name": "selenium",
   "version": "1.0.0",
+  "type": "module",
   "main": "zavrsnitest.js",
   "directories": {
     "test": "tests"
   },
   "scripts": {
-    "test": "mocha --timeout 10000"
+    "test": "mocha tests/**/*.js"
   },
   "keywords": [],
   "author": "masa",
